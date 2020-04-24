@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Graded Writing Task Calculator</title>
+        <style type="text/css">
+            body {
+  background-color: #35434b;
+}
+h1 {
+    color: white;
+}
+h2 {
+    color: white;
+}
+.responsive {
+  width: 100%;
+  height: auto;
+}
+p.active {
+    color: green;
+    text-align: center;
+    font-size: 80px;
+}
+p.normal{
+    color:red;
+    text-align: center;
+    font-size: 80px;
+}
+input[type="number"] {
+      background-color: #35434b;
+  color: white;
+  border-color: black;
+width:50px; height:30px; 
+text-align:center; 
+margin:3px; 
+float:left;}
+select, .equals {
+    border-color: black;
+    background-color: #35434b;
+  color: white;
+margin:3px; 
+float:left;}
+output {
+display:block; 
+border:1px solid #35434b; 
+border-radius:5px; 
+min-width:25px; height:25px; 
+margin:3px; padding:2px;
+text-align:center; 
+background:#000000; 
+color:#ffffff; 
+float:left; }
+select, .equals {
+margin:3px; 
+float:left;}
+output {
+display:block; 
+border:1px solid #35434b; 
+border-radius:5px; 
+min-width:25px; height:25px; 
+margin:3px; padding:2px;
+text-align:center; 
+background:#000000; 
+color:#ffffff; 
+float:left; }
+            </style>
+
+        </head>
+    <body>
+
+<h1>Graded Writing Task Calculator</h1>
+<script>
+    function val(c, o, g, l, m, w, t) {
+        c = document.getElementById("cont_id").value;
+        o = document.getElementById("orgn_id").value;
+        g = document.getElementById("gram_id").value;
+        l = document.getElementById("lexi_id").value;
+        m = document.getElementById("mech_id").value;
+        w = document.getElementById("wrds_id").value;
+        t = document.getElementById("titl_id").value;
+        out = document.getElementById('out_id').innerHTML = parseInt(c) + parseInt(o) + parseInt(g) + parseInt(l) + parseInt(m) + parseInt(w) + parseInt(t);
+
+    }
+    </script>
+    
+<select onchange="val()" id="cont_id">
+<option value=25>Very Good 25 pts.</option>
+<option value=20>Good 20 pts.</option>
+<option value=15>Able 15 pts</option>
+  <option value=10>Limited 10 pts.</option>
+    <option value=5>Unsatisfactory 5 pts.</option>
+    <option value=1>Way Off 1pts.</option>
+</select>
+<br>
+Content<br><br>
+<img src=img/organization.png class="responsive">
+<select type="number" onchange="val()" id="orgn_id">
+<option value=25>Very Good 25 pts.</option>
+<option value="20">Good 20 pts.</option>
+<option value="15">Able 15 pts</option>
+  <option value="10">Limited 10 pts.</option>
+    <option value="5">Unsatisfactory 5 pts.</option>
+    <option value="1">Way Off 1pts.</option>
+</select>
+<br>
+Organization
+(Coherence -
+Cohesion)<br><br>
+<img src=img/grammar.png class="responsive">
+  <select onchange="val()" id="gram_id">
+<option value="25">Very Good 25 pts.</option>
+<option value="20">Good 20 pts.</option>
+<option value="15">Able 15 pts</option>
+  <option value="10">Limited 10 pts.</option>
+    <option value="5">Unsatisfactory 5 pts.</option>
+    <option value="1">Way Off 1pts.</option>
+</select>
+<br>
+Grammar Range
+& Accuracy<br><br>
+<img src=img/lexi.png class="responsive">
+  <select onchange="val()" id="lexi_id">
+<option value="20">Very Good 20 pts.</option>
+<option value="16">Good 16 pts.</option>
+<option value="12">Able 12 pts</option>
+  <option value="8">Limited 8 pts.</option>
+    <option value="4">Unsatisfactory 4 pts.</option>
+    <option value="1">Way Off 1pts.</option>
+</select>
+<br>
+Lexical Resource<br><br>
+<img src=img/mech.png class="responsive">
+  <select onchange="val()" id="mech_id">
+<option value="5">Very Good 5 pts.</option>
+<option value="4">Good 4 pts.</option>
+<option value="3">Able 3 pts</option>
+  <option value="2">Limited 2 pts.</option>
+    <option value="1">Unsatisfactory 1 pts.</option>
+    <option value="1">Way Off 1pts.</option>
+</select>
+<br>
+Mechanics<br><br>
+  <select onchange="val()" id="wrds_id">
+<option value="0">240-250 words: FULL CREDIT</option>
+<option value="-2">200-240 words: -2 pts.</option>
+<option value="-3">150-199 words: -3 pts.</option>
+  <option value="-4">
+100-149 words: -4 pts.</option>
+    <option value="-5">Less than 100 -5 pts.</option>
+</select>
+<br>
+Word Count<br><br>
+<select onchange="val()" id="titl_id">
+    <option value="0">Title isn't missing: FULL CREDIT</option>
+    <option value="-2">No title: -2 pts.</option>
+    </select>
+    <br>
+    Title<br><br>
+
+    <img src=img/title.png class="responsive">
+  
+<div class="equals"> = </div>
+<output id="out_id">0</output>
+</form>  
+
+      
+<p id="demo"></p>
+</body>
+</html>
