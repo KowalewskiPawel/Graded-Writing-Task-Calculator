@@ -3,6 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <title>Graded Writing Task Calculator</title>
         <style type="text/css">
             body {
@@ -60,7 +64,7 @@ output {
 display:block; 
 border:1px solid #35434b; 
 border-radius:5px; 
-min-width:25px; height:25px; 
+min-width:57px; height:57px; 
 margin:3px; padding:2px;
 text-align:center; 
 background:#000000; 
@@ -85,8 +89,15 @@ float:left; }
         w = document.getElementById("wrds_id").value;
         t = document.getElementById("titl_id").value;
         out = document.getElementById('out_id').innerHTML = parseInt(c) + parseInt(o) + parseInt(g) + parseInt(l) + parseInt(m) + parseInt(w) + parseInt(t);
-
+cont = document.getElementById("cont").innerHTML = c;
+org = document.getElementById("org").innerHTML = o;
+gram = document.getElementById("gram").innerHTML = g;
+lex = document.getElementById("lex").innerHTML = l;
+mech = document.getElementById("mech").innerHTML = m;
+wrd = document.getElementById("wrd").innerHTML = w;
+titl = document.getElementById("titl").innerHTML = t;
     }
+  
     </script>
     
 <select onchange="val()" id="cont_id">
@@ -166,8 +177,19 @@ Word Count<br><br>
 
     <img src=img/title.png class="responsive">
   
-<div class="equals"> = </div>
-<output id="out_id">0</output>
+<div class="equals" style="font-size: 40px;"> The final score is </div>
+<output id="out_id" style="font-size: 40px;">0</output>
+<br><br><br><br>
+<p style="font-size: 20px;">
+  Conent: <b id="cont"></b><br>
+  Organization (Coherence - Cohesion): <b id="org"></b><br>
+  Grammar Range & Accuracy: <b id="gram"></b><br>
+  Lexical Resource: <b id="lex"></b><br>
+  Mechanics: <b id="mech"></b><br>
+  Word Count: <b id="wrd"></b><br>
+  Title: <b id="titl"></b><br>
+</p>
+
 </form>  
 
       
